@@ -1,0 +1,6 @@
+[project]
+name = "ai-service-observability-lab"
+version = "0.1.0"
+description = "A small, measurable AI service fault-injection and recovery lab"
+requires-python = ">=3.11"
+dependencies = []

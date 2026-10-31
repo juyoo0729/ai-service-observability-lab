@@ -1,0 +1,158 @@
+{
+  "started_at": "2026-10-31T05:30:15.434272+00:00",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "transport": "inprocess",
+  "concurrency": 1,
+  "provider": "simulated",
+  "phases": [
+    {
+      "name": "baseline",
+      "started_at": "2026-10-31T05:30:15.505946+00:00",
+      "finished_at": "2026-10-31T05:30:17.569945+00:00",
+      "summary": {
+        "total_requests": 12,
+        "eligible_requests": 12,
+        "outcomes": {
+          "success": 10,
+          "hold": 2
+        },
+        "system_errors": 0,
+        "system_error_rate": 0.0,
+        "valid_response_rate": 1.0,
+        "answer_rate": 0.8333333333333334,
+        "hold_rate": 0.16666666666666666,
+        "latency_p50_ms": 7.097199999861914,
+        "latency_p95_ms": 17.52156499992452,
+        "answer_latency_p95_ms": 17.584134999879097,
+        "provider_attempts": 12,
+        "simulated_cost_usd": 0.0024,
+        "simulated_cost_per_answer_usd": 0.00024000000000000006,
+        "slo_target": 0.95,
+        "error_budget_remaining_requests": 0.6000000000000005
+      },
+      "alert_after": {
+        "state": "ok",
+        "observations": 10,
+        "error_rate": 0.0
+      }
+    },
+    {
+      "name": "incident",
+      "started_at": "2026-10-31T05:30:17.577477+00:00",
+      "finished_at": "2026-10-31T05:30:19.551625+00:00",
+      "summary": {
+        "total_requests": 12,
+        "eligible_requests": 12,
+        "outcomes": {
+          "timeout": 4,
+          "upstream_error": 4,
+          "rate_limited": 2,
+          "empty_response": 2
+        },
+        "system_errors": 12,
+        "system_error_rate": 1.0,
+        "valid_response_rate": 0.0,
+        "answer_rate": 0.0,
+        "hold_rate": 0.0,
+        "latency_p50_ms": 17.63729999993302,
+        "latency_p95_ms": 110.66550999989886,
+        "answer_latency_p95_ms": null,
+        "provider_attempts": 24,
+        "simulated_cost_usd": 0.0048,
+        "simulated_cost_per_answer_usd": null,
+        "slo_target": 0.95,
+        "error_budget_remaining_requests": -11.399999999999999
+      },
+      "alert_after": {
+        "state": "firing",
+        "observations": 10,
+        "error_rate": 1.0
+      }
+    },
+    {
+      "name": "recovery",
+      "started_at": "2026-10-31T05:30:19.559674+00:00",
+      "finished_at": "2026-10-31T05:30:20.838153+00:00",
+      "summary": {
+        "total_requests": 12,
+        "eligible_requests": 12,
+        "outcomes": {
+          "success": 10,
+          "hold": 2
+        },
+        "system_errors": 0,
+        "system_error_rate": 0.0,
+        "valid_response_rate": 1.0,
+        "answer_rate": 0.8333333333333334,
+        "hold_rate": 0.16666666666666666,
+        "latency_p50_ms": 6.849699999747827,
+        "latency_p95_ms": 7.3639450004975515,
+        "answer_latency_p95_ms": 7.395355000562631,
+        "provider_attempts": 10,
+        "simulated_cost_usd": 0.002,
+        "simulated_cost_per_answer_usd": 0.00020000000000000004,
+        "slo_target": 0.95,
+        "error_budget_remaining_requests": 0.6000000000000005
+      },
+      "alert_after": {
+        "state": "ok",
+        "observations": 10,
+        "error_rate": 0.0
+      }
+    }
+  ],
+  "alert_transitions": [
+    {
+      "state": "ok",
+      "observations": 10,
+      "error_rate": 0.0,
+      "observed_at": "2026-10-31T05:30:17.307700+00:00",
+      "after_request_id": "ac1fe52fd5fc4e989b34d555b3a5395e"
+    },
+    {
+      "state": "firing",
+      "observations": 10,
+      "error_rate": 0.2,
+      "observed_at": "2026-10-31T05:30:18.068136+00:00",
+      "after_request_id": "6a50261b12d24a95b10c71d988fbada9"
+    },
+    {
+      "state": "ok",
+      "observations": 10,
+      "error_rate": 0.1,
+      "observed_at": "2026-10-31T05:30:20.494895+00:00",
+      "after_request_id": "cdbf972b15aa4a5694c3620c1fa248d2"
+    }
+  ],
+  "source_sha256": {
+    "observability_lab.py": "eea0ca7237291180ba388f347927add087941e6f7b5cacb0885422bb2440d219",
+    "run_drill.py": "56044628b46c890429419844c652283f9460b1af1f2b9427eccffd762920a91e"
+  },
+  "finished_at": "2026-10-31T05:30:20.843663+00:00",
+  "summary": {
+    "total_requests": 36,
+    "eligible_requests": 36,
+    "outcomes": {
+      "success": 20,
+      "hold": 4,
+      "timeout": 4,
+      "upstream_error": 4,
+      "rate_limited": 2,
+      "empty_response": 2
+    },
+    "system_errors": 12,
+    "system_error_rate": 0.3333333333333333,
+    "valid_response_rate": 0.6666666666666666,
+    "answer_rate": 0.5555555555555556,
+    "hold_rate": 0.1111111111111111,
+    "latency_p50_ms": 7.379650000530091,
+    "latency_p95_ms": 104.91384999977527,
+    "answer_latency_p95_ms": 17.271285000106218,
+    "provider_attempts": 46,
+    "simulated_cost_usd": 0.0092,
+    "simulated_cost_per_answer_usd": 0.00046000000000000023,
+    "slo_target": 0.95,
+    "error_budget_remaining_requests": -10.2
+  }
+}
