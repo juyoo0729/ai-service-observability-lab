@@ -70,7 +70,7 @@ POST 예시:
 
 ## 실험 결과
 
-현재 환경은 로컬 HTTP 연결을 차단하여, 서비스 직접 호출(inprocess)로 측정한 기록을 [EXPERIMENT.md](EXPERIMENT.md)와 example-* 파일에 보관합니다. HTTP 통합 검증은 아직 완료되지 않았습니다.
+현재 환경은 로컬 HTTP 연결을 차단하여, 서비스 직접 호출(inprocess)로 측정한 기록을 [EXPERIMENT.md](EXPERIMENT.md)와 example-* 파일에 보관합니다. GitHub Actions의 Python 3.11·3.12 환경에서 테스트 12개와 HTTP 장애·복구 실험(동시성 1·4)이 모두 통과했습니다. [클라우드 검증 기록](https://github.com/juyoo0729/ai-service-observability-lab/actions/runs/41173072994)
 CI도 테스트와 두 동시성 조건의 실험을 실행하고 결과를 artifact로 보관합니다.
 
 - `summary.json`: 환경·소스 해시·단계별 집계·알림 변화
