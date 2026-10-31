@@ -1,0 +1,30 @@
+name: Reliability lab
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test-and-drill:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m unittest -v
+      - run: python run_drill.py --output runs/ci-serial
+      - run: python run_drill.py --concurrency 4 --output runs/ci-concurrent
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reliability-${{ matrix.python-version }}
+          path: |
+            runs/ci-serial/*.json
+            runs/ci-serial/*.jsonl
+            runs/ci-serial/*.md
+            runs/ci-serial/*.html
+            runs/ci-concurrent/*.json
+            runs/ci-concurrent/*.jsonl
+            runs/ci-concurrent/*.md
+            runs/ci-concurrent/*.html
